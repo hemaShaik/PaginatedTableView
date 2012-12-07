@@ -1,7 +1,6 @@
 PaginatedTableView
 ==================
 
-PaginatedTableView
 
 PaginatedTableview is a subclass of  UITableview that can be used in an app to implement pagination in a tableview.
 
