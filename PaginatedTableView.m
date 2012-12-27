@@ -55,6 +55,9 @@
     dataArray=[[NSMutableArray alloc]init];
     
     [self.dataArray addObjectsFromArray:array];
+    
+    if([array count] <self.numberOFRecordsPerPage)
+        isLastPage=YES;
 }
 
 
@@ -64,7 +67,7 @@
 -(void)getNextPageData{
    
     if ([_realDelegate respondsToSelector:@selector(getNextPageData)]){
-        if([self.dataArray count]<self.numberOFRecordsPerPage){
+        
             if(!nextPageRequest){
                 nextPageRequest=YES;
                 self.pageNumber=self.pageNumber+1;
@@ -75,7 +78,7 @@
                 [_realDataSource getNextPageData];
                 
             }
-        }
+        
     }
     
 }
